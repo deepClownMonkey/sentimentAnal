@@ -1,12 +1,4 @@
-// ==UserScript==
-// @name         Sentiment Analyzer
-// @namespace    http://tampermonkey.net/
-// @version      1.0
-// @description  Provides sentiment analysis functions for other scripts
-// @match        *://*/*
-// @grant        none
-// @run-at       document-start
-// ==/UserScript==
+
 
 (function() {
     'use strict';
