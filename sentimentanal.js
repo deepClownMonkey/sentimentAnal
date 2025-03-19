@@ -29,7 +29,7 @@ class SentimentAnalyzer {
             ],
             flustered: [
                 "flustered", "embarrassed", "confused", "stammering", "disconcerted", "rattled", "abashed",
-                "sheepish", "self-conscious", "nonplussed", "befuddled", "perturbed", "discomfited", "awkward", "blush", "hammering", "pounding'
+                "sheepish", "self-conscious", "nonplussed", "befuddled", "perturbed", "discomfited", "awkward", "blush", "hammering", "pounding", "flushed"
             ],
             nervous: [
                 "nervous", "anxious", "worried", "jittery", "apprehensive", "edgy", "tense", "restless",
