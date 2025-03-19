@@ -29,11 +29,11 @@ class SentimentAnalyzer {
             ],
             flustered: [
                 "flustered", "embarrassed", "confused", "stammering", "disconcerted", "rattled", "abashed",
-                "sheepish", "self-conscious", "nonplussed", "befuddled", "perturbed", "discomfited", "awkward", "blush"
+                "sheepish", "self-conscious", "nonplussed", "befuddled", "perturbed", "discomfited", "awkward", "blush", "hammering", "pounding'
             ],
             nervous: [
                 "nervous", "anxious", "worried", "jittery", "apprehensive", "edgy", "tense", "restless",
-                "fidgety", "uneasy", "panicky", "fretful", "jumpy", "overwrought", "neurotic", "stressed"
+                "fidgety", "uneasy", "panicky", "fretful", "jumpy", "overwrought", "neurotic", "stressed", "hesitantly", "hesitating"
             ],
             corny: [
                 "corny", "cheesy", "sappy", "clichéd", "trite", "tacky", "kitschy", "sentimental", "mawkish",
@@ -67,6 +67,12 @@ class SentimentAnalyzer {
             arousal: [
                 "aroused", "flushed", "desire", "wet", "turned on", "seductive", "tempting", "passionate",
                 "lustful", "sensual", "erotic", "frisky", "horny", "heated", "stimulated", "provocative"
+            ],
+            showing: [
+                "revealed", "glimpse", "revealing"
+            ],
+            liftup: [
+                "upward", "fabric", "revealing", "lifted", "lifting", "shown"
             ]
         };
     }
