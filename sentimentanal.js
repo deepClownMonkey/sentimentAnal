@@ -1,8 +1,7 @@
-
-
 (function() {
     'use strict';
 
+    // Define all categories and keywords
     const sentimentCategories = {
         sad: [
             "sad", "depressed", "gloomy", "mournful", "blue", "heartbroken", "melancholy", "sorrowful",
@@ -71,15 +70,17 @@
         ]
     };
 
-    // Expose the function so other scripts can use it
+    // Expose a global function for sentiment analysis
     window.analyzeSentiment = function(text) {
         const lowerText = text.toLowerCase();
         let detectedSentiments = [];
+
         for (const [category, words] of Object.entries(sentimentCategories)) {
             if (words.some(word => lowerText.includes(word))) {
                 detectedSentiments.push(category);
             }
         }
+
         return detectedSentiments.length > 0 ? detectedSentiments.join(", ") : "Neutral 😐";
     };
 })();
