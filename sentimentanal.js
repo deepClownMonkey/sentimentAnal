@@ -1,5 +1,3 @@
-// This file would be hosted at https://github.com/deepClownMonkey/sentimentAnal/blob/main/sentimentanal.js
-
 class SentimentAnalyzer {
     constructor() {
         this.sentimentCategories = {
@@ -15,7 +13,9 @@ class SentimentAnalyzer {
                 "jubilant", "content", "delighted", "gleeful", "radiant", "buoyant", "euphoric", "thrilled",
                 "overjoyed", "merry", "sunny", "chipper", "exuberant", "jaunty", "sprightly", "vivacious",
                 "effervescent", "optimistic", "giddy", "jolly", "gleaming", "spirited", "festive", "sparkling",
-                "gratified", "jovial", "peppy", "zestful", "on cloud nine", "walking on air", "in high spirits"
+                "gratified", "jovial", "peppy", "zestful", "on cloud nine", "walking on air", "in high spirits",
+                // Added "love" as an example:
+                "love", "loved"
             ],
             teasing: [
                 "teasing", "playful", "mischievous", "joking", "jesting", "bantering", "kidding", "ribbing",
@@ -29,11 +29,13 @@ class SentimentAnalyzer {
             ],
             flustered: [
                 "flustered", "embarrassed", "confused", "stammering", "disconcerted", "rattled", "abashed",
-                "sheepish", "self-conscious", "nonplussed", "befuddled", "perturbed", "discomfited", "awkward", "blush", "hammering", "pounding", "flushed"
+                "sheepish", "self-conscious", "nonplussed", "befuddled", "perturbed", "discomfited", "awkward",
+                "blush", "hammering", "pounding", "flushed"
             ],
             nervous: [
                 "nervous", "anxious", "worried", "jittery", "apprehensive", "edgy", "tense", "restless",
-                "fidgety", "uneasy", "panicky", "fretful", "jumpy", "overwrought", "neurotic", "stressed", "hesitantly", "hesitating"
+                "fidgety", "uneasy", "panicky", "fretful", "jumpy", "overwrought", "neurotic", "stressed",
+                "hesitantly", "hesitating"
             ],
             corny: [
                 "corny", "cheesy", "sappy", "clichéd", "trite", "tacky", "kitschy", "sentimental", "mawkish",
@@ -82,16 +84,12 @@ class SentimentAnalyzer {
         let detectedSentiments = [];
 
         for (const [category, words] of Object.entries(this.sentimentCategories)) {
-            if (words.some(word => lowerText.includes(word))) {
+            // Use word boundaries in regex for more precise matching.
+            if (words.some(word => new RegExp(`\\b${word}\\b`).test(lowerText))) {
                 detectedSentiments.push(category);
             }
         }
 
-        return detectedSentiments.length > 0 ? detectedSentiments.join(", ") : "Neutral 😐";
+        return detectedSentiments.length > 0 ? detectedSentiments : ["Non-neutral"];
     }
-}
-
-// This makes the class available to be imported or used when the script is evaluated
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = SentimentAnalyzer;
 }
