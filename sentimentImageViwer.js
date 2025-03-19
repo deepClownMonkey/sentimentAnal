@@ -109,7 +109,7 @@ const SentimentImageViewer = (function() {
             // Create image element
             const img = document.createElement('img');
             img.className = 'floating-image';
-            img.src = 'https://i.imgur.com/HnWkK5t.png'; // Happy emoji image
+            img.src = 'https://image.cdn2.seaart.me/2025-03-19/cvd3p3de878c73fu24e0/b6c108f061627123f75223d19d24e782_high.webp'; // Happy emoji image
             img.alt = 'Happy Reaction';
             
             // Create close button
